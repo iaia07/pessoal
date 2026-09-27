@@ -164,7 +164,7 @@ function createHeart() {
 function createMiniHeart() {
 
     drawHeart(miniHeart, {
-        tamanho: window.innerWidth < 600 ? 70 : 95,
+        tamanho: window.innerWidth < 600 ? 64 : 82,
         passo: 18
     });
 }
