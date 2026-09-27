@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para você ♡</title>
+
+    <link rel="icon" href="data:,">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="grain" aria-hidden="true"></div>
+
+
+    <!-- TELA INICIAL -->
+    <main id="intro" class="screen active">
+
+        <div class="intro-content">
+
+            <p class="hand">fiz uma coisinha pra você</p>
+
+            <h1 class="heart-mark">♡</h1>
+
+            <button id="startButton" class="btn">tocar para abrir</button>
+
+        </div>
+
+    </main>
+
+
+    <!-- TELA DO CORAÇÃO -->
+    <main id="heartScreen" class="screen">
+
+        <div id="heart" class="heart-box"></div>
+
+        <div id="heartMessage">
+            <span>para você,</span>
+            <strong>Eduarda ♡</strong>
+        </div>
+
+        <button id="continueButton" class="btn">tem mais uma coisa...</button>
+
+    </main>
+
+
+    <!-- ÚLTIMA PARTE: CORAÇÃO + CARD -->
+    <main id="finalScreen" class="screen">
+
+        <div class="final-content">
+
+            <div id="miniHeart" class="heart-box mini"></div>
+
+            <section class="playlist">
+
+                <h3>Músicas que me lembram você e eu</h3>
+
+                <ul class="song-list" id="songList"></ul>
+
+                <p class="playlist-hint" id="playlistHint">
+                    ♪ ainda vou colocar as músicas aqui
+                </p>
+
+            </section>
+
+            <button id="backButton" class="btn back">voltar para o início</button>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

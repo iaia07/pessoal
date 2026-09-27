@@ -1,0 +1,445 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #07111f;
+    color: #ffffff;
+    font-family: "Georgia", serif;
+    overflow: hidden;
+}
+
+
+/* =========================
+   TELAS
+========================= */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+#intro {
+    background:
+        radial-gradient(
+            circle at center,
+            #142a46 0%,
+            #0b192b 45%,
+            #050b14 100%
+        );
+}
+
+.intro-content {
+    width: 90%;
+    max-width: 400px;
+
+    text-align: center;
+
+    animation: introAppear 1.5s ease forwards;
+}
+
+.small-text {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.intro-content h1 {
+    font-size: 5rem;
+    font-weight: normal;
+
+    color: #b9dcff;
+
+    text-shadow:
+        0 0 15px rgba(145, 205, 255, 0.8),
+        0 0 40px rgba(145, 205, 255, 0.4);
+
+    margin-bottom: 45px;
+
+    animation: heartbeat 2s infinite;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button {
+    border: 1px solid rgba(190, 220, 255, 0.35);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 100px;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 0 25px rgba(150, 210, 255, 0.2);
+}
+
+
+/* =========================
+   CORAÇÃO
+========================= */
+
+#heartScreen {
+    background:
+        radial-gradient(
+            circle at center,
+            #101f36 0%,
+            #07111f 60%,
+            #03070d 100%
+        );
+
+    flex-direction: column;
+}
+
+#heart {
+    position: absolute;
+
+    width: 100%;
+    height: 70%;
+
+    left: 0;
+    top: 12%;
+}
+
+
+/* CADA I LOVE YOU */
+
+.love-word {
+    position: absolute;
+
+    color: #bcdfff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(7px, 2.1vw, 12px);
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transform: scale(0.2);
+
+    text-shadow:
+        0 0 8px rgba(150, 210, 255, 0.7);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(.17,.67,.3,1.3);
+}
+
+.love-word.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* =========================
+   TEXTO NO CENTRO
+========================= */
+
+#heartMessage {
+    position: absolute;
+
+    top: 47%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition: opacity 2s ease;
+
+    pointer-events: none;
+}
+
+#heartMessage.show {
+    opacity: 1;
+}
+
+#heartMessage span {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 3px;
+
+    color: rgba(255,255,255,0.6);
+
+    margin-bottom: 8px;
+}
+
+#heartMessage strong {
+    display: block;
+
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+
+    font-weight: normal;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 20px rgba(160, 210, 255, 0.8);
+}
+
+
+/* =========================
+   BOTÃO DO CORAÇÃO
+========================= */
+
+#continueButton {
+    position: absolute;
+
+    bottom: 7%;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        transform 0.3s ease;
+}
+
+#continueButton.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================
+   TELA FINAL
+========================= */
+
+#finalScreen {
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #162a45,
+            #07111f 70%
+        );
+
+    overflow-y: auto;
+}
+
+.final-content {
+    width: 100%;
+    max-width: 420px;
+
+    text-align: center;
+
+    animation: finalAppear 1.5s ease;
+}
+
+.final-decoration {
+    display: block;
+
+    color: #a9d8ff;
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
+.final-content h2 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 25px rgba(160, 210, 255, 0.5);
+}
+
+.final-content p {
+    color: rgba(255,255,255,0.75);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.final-content .highlight {
+    color: #b9dcff;
+
+    margin-top: 30px;
+}
+
+.final-love {
+    margin: 35px 0;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    font-size: clamp(1.5rem, 7vw, 2.3rem);
+
+    letter-spacing: 2px;
+
+    color: #c5e4ff;
+
+    text-shadow:
+        0 0 20px rgba(150, 210, 255, 0.7);
+}
+
+.signature {
+    display: block;
+
+    color: rgba(255,255,255,0.45);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes introAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TELAS MAIORES
+========================= */
+
+@media (min-width: 700px) {
+
+    #heart {
+        width: 550px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .love-word {
+        font-size: 10px;
+    }
+
+    #heartMessage {
+        top: 48%;
+    }
+}
